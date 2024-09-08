@@ -1,0 +1,158 @@
+// Variables
+$font-family: "Urbanist", sans-serif;
+$main-color: #fcea47;
+$black-color: #000;
+$white-color: #fff;
+$body-bg-color: #191919;
+
+// Import Google Font
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&display=swap");
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $body-bg-color;
+  color: $white-color;
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Navbar
+.navbar {
+  background-color: $black-color;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    .logo {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .navbar-btn {
+      background-color: $main-color;
+      color: $black-color;
+      padding: 5px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.3s;
+      text-decoration: none;
+
+      &:hover {
+        background-color: lighten($main-color, 15%);
+        color: $black-color;
+      }
+    }
+  }
+}
+
+// Login content
+.login-content {
+  background-color: $black-color;
+  margin: 100px auto;
+  text-align: center;
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.4);
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// Login form
+.login-form {
+  .form-group {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $main-color;
+      border-radius: 5px;
+      background: transparent;
+      color: $white-color;
+
+      &::placeholder {
+        color: #555;
+      }
+    }
+  }
+
+  .form-submit {
+    background-color: $main-color;
+    color: $black-color;
+    padding: 10px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin: auto;
+
+    &:hover {
+      background-color: lighten($main-color, 15%);
+      color: $black-color;
+    }
+  }
+}
+
+// Responsive styles
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar .container .logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar .container .navbar-btn {
+    padding: 5px 10px;
+  }
+
+  .login-content {
+    width: 80%;
+  }
+}
